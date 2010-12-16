@@ -1,12 +1,10 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>WEBookshelf</title> 
+	<title>jQuery Mobile Overview by Andrew S. Roberts</title> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
-	
-	<link href="../styles.css" type="text/css" rel="stylesheet">
 </head> 
 <body> 
 
@@ -14,30 +12,19 @@
 <div data-role="page" id="home">
 
 	<div data-role="header" data-theme="b">
-		<h1>WEBookshelf</h1>
+		<a href="#main-menu" data-rel="dialog" data-transition="slidedown" data-icon="grid">Menu</a>
+		<h1>jQuery Mobile Overview by Andrew S. Roberts</h1>
+		<a href="index.html" data-icon="info">jQuery Mobile Doc.</a>
 	</div><!-- /header -->
 
-	<div data-role="content" data-theme="b">
-		<h1>This is the home page</h1>
-		
-		<a href="#main-menu" data-rel="dialog" data-transition="slidedown">Menu</a>
+	<div data-role="content" data-theme="b" id="main">
 			
-		<div id="books-container">
-			<div class="single-book">
-				<img src="../images/jsTheGoodParts.gif">
-			</div>
-			<div class="single-book">
-				<a href="" class="like-book">LIKE</a>
-				<h4>Javascript: The Good Parts</h4>
-				<p>Douglas Crockford</p>
-				<p>Yahoo Press</p>
-			</div>
-		</div>
+			<p>Pssst, click the menu above :)</p>
 			
 	</div><!-- /content -->
 
 	<div data-role="footer" data-theme="b">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
+		<h4><small>jQuery Mobile Overview by Andrew S. Roberts</small></h4>
 	</div><!-- /header -->
 	
 </div><!-- /page -->
@@ -45,125 +32,401 @@
 <!-- ////////// MAIN MENU ////////// -->
 <div data-role="page" id="main-menu">
 
-	<div data-role="header">
+	<div data-role="header" data-theme="b">
 		<h1>WEBookshelf: Menu</h1>
 	</div><!-- /header -->
 
 	<div data-role="content"> 
 		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
-				<li data-role="list-divider">Menu</li>
+				<li data-role="list-divider">Select a page:</li>
 				<li><a href="#home">Home</a></li> 
-				<li><a href="#books-main">Books</a></li> 
-				<li><a href="#authors-main">Authors</a></li> 
-				<li><a href="#users-main">Users</a></li> 
-				<li><a href="#about-main">About</a></li> 
-				<li><a href="#contact-main">Contact</a></li> 
+				<li><a href="#page-structure">Page Structure</a></li>
+				<li><a href="#theming">Theming</a></li>  
+				<li><a href="#form-structure">Form Structure</a></li> 
+				<li><a href="#buttons-icons">Buttons &amp; Icons</a></li>
 		</ul>
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
+	<div data-role="footer" data-theme="b">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
 	</div><!-- /header -->
 	
 </div><!-- /page -->
 
-<!-- ////////// BOOKS PAGE ////////// -->
-<div data-role="page" id="books-main">
+
+
+<!-- ////////// PAGE STRUCTURE DIV ////////// -->
+<div data-role="page" id="page-structure">
 
 	<div data-role="header">
-		<h1>WEBookshelf: Books</h1>
+		<h1>Page Structure</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Page content goes here.</p>		
+		<p>Here is the code to get a basic page, like this one:</p><br />
+		
+		<pre>&lt;!-- ////////// PAGE STRUCTURE DIV ////////// --&gt;
+&lt;div data-role="page" id="page-structure"&gt;
+
+	&lt;div data-role="header"&gt;
+		&lt;h1&gt;Page Structure&lt;/h1&gt;
+	&lt;/div&gt;&lt;!-- /header --&gt;
+
+	&lt;div data-role="content"&gt;	
+		&lt;p&gt;Some text here.&lt;/p&gt;
+	&lt;/div&gt;&lt;!-- /content --&gt;
+
+	&lt;div data-role="footer"&gt;
+		&lt;h4&gt;&lt;small&gt;jQuery Mobile Overview - 2010 Andrew S. Roberts&lt;/small&gt;&lt;/h4&gt;
+	&lt;/div&gt;&lt;!-- /header --&gt;
+&lt;/div&gt;&lt;!-- /page --&gt;</pre><br />
+
+	<p>jQuery Mobile works right along with normal jQuery and loads each new page dynamically. The page structure might seem a bit odd to some, but all HTML content is contained in one single HTML page. Then with JavaScript, one page, or div, is shown, while the other div's are hidden. Dynamic transitions gives the effect that separate pages are being loaded.</p>
+				
 	</div><!-- /content -->
 
 	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
 	</div><!-- /header -->
 </div><!-- /page -->
 
-<!-- ////////// AUTHORS PAGE ////////// -->
-<div data-role="page" id="authors-main">
+<!-- ////////// THEMING DIV ////////// -->
+<div data-role="page" id="theming">
 
 	<div data-role="header">
-		<h1>WEBookshelf: Authors</h1>
+		<h1>Theming</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Page content goes here.</p>		
+		<p>You wanna change the theme of your page or elements? No prob:</p><br />
+		
+		<ul data-role="listview" data-inset="true" data-theme="a" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" role="listbox">
+			<li role="option" tabindex="0" data-theme="a" class="ui-btn ui-btn-icon-right ui-li ui-corner-top ui-btn-down-a ui-btn-up-a"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+			<li role="option" tabindex="-1" data-theme="a" class="ui-btn ui-btn-icon-right ui-li ui-corner-bottom ui-btn-hover-a"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="b" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" role="listbox">
+			<li role="option" tabindex="0" data-theme="b" class="ui-btn ui-btn-icon-right ui-li ui-corner-top ui-btn-up-b"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+			<li role="option" tabindex="-1" data-theme="b" class="ui-btn ui-btn-icon-right ui-li ui-corner-bottom ui-btn-hover-b"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" role="listbox">
+			<li role="option" tabindex="0" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-top ui-btn-up-c"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+			<li role="option" tabindex="-1" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-bottom ui-btn-up-c"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="d" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" role="listbox">
+			<li role="option" tabindex="0" data-theme="d" class="ui-btn ui-btn-up-d ui-btn-icon-right ui-li ui-corner-top"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+			<li role="option" tabindex="-1" data-theme="d" class="ui-btn ui-btn-up-d ui-btn-icon-right ui-li ui-corner-bottom"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="e" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" role="listbox">
+			<li role="option" tabindex="0" data-theme="e" class="ui-btn ui-btn-up-e ui-btn-icon-right ui-li ui-corner-top"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+			<li role="option" tabindex="-1" data-theme="e" class="ui-btn ui-btn-up-e ui-btn-icon-right ui-li ui-corner-bottom"><div class="ui-btn-inner"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">List item</a></div><span class="ui-icon ui-icon-arrow-r"></span></div></li>
+		</ul>
+		
+		<p>Check out these pages:</p>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+				<li data-role="list-divider">Select a page:</li>
+				<li><a href="#theme-a">Theme a</a></li> 
+				<li><a href="#theme-b">Theme b</a></li>
+				<li><a href="#theme-c">Theme c</a></li>  
+				<li><a href="#theme-d">Theme d</a></li> 
+				<li><a href="#theme-e">Theme e</a></li>
+		</ul>
+		
+		<p>Just change the <code>data-theme="a"</code> on your container div, header, content, footer, or whatever to either a,b,c,d or e.</p>
+				
 	</div><!-- /content -->
 
 	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
 	</div><!-- /header -->
 </div><!-- /page -->
 
-<!-- ////////// USERS PAGE ////////// -->
-<div data-role="page" id="users-main">
+<!-- ////////// FORMS DIV ////////// -->
+<div data-role="page" id="form-structure">
 
-	<div data-role="header">
-		<h1>WEBookshelf: Users</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<p>Page content goes here.</p>		
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
-	</div><!-- /header -->
-</div><!-- /page -->
-
-<!-- ////////// ABOUT PAGE ////////// -->
-<div data-role="page" id="about-main">
-
-	<div data-role="header">
-		<h1>WEBookshelf: About</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<p>Page content goes here.</p>		
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
-	</div><!-- /header -->
-</div><!-- /page -->
-
-<!-- ////////// LOGIN PAGE ////////// -->
-<div data-role="page" id="contact-main">
-
-	<div data-role="header">
-		<h1>WEBookshelf: Login</h1>
+	<div data-role="header" data-theme="b">
+		<h1>Form Structure</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<form action="../userLogIn.php" method="post">	
+	
+	<p>Form elements are simple with jQuery Mobile! Here are many of them:</p>
+	
+		<form action="" method="post">	
 			<!-- TEXT INPUT -->
 			<div data-role="fieldcontain">
-				<label for="u_username">Username</label>
-				<input type="text" name="u_username" id="u_username"><br>
-			</div>
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username"><br>
 			
-			<div data-role="fieldcontain">
-				<label for="u_password">Password</label>
-				<input type="password" name="u_password" id="u_password"><br>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password"><br>
+				
+				<label for="slider">Input slider:</label>
+ 				<input type="range" name="slider" id="slider" value="0" min="0" max="100"  /><br><br>
+ 				
+ 				<label for="slider2">Select slider:</label>
+				<select name="slider2" id="slider2" data-role="slider">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select><br><br>
+				
+				<label for="list">Select a list item:</label>
+	         	<input type="radio" name="radio-view" id="radio-view-a" value="list"><label for="radio-view-a" data-theme="c" class="ui-btn ui-corner-left ui-btn-down-c ui-btn-up-c"><span class="ui-btn-inner ui-corner-left"><span class="ui-btn-text">Item 1</span></span></label>
+	         	<input type="radio" name="radio-view" id="radio-view-b" value="grid"><label for="radio-view-b" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Item 2</span></span></label>
+	         	<input type="radio" name="radio-view" id="radio-view-c" value="gallery"><label for="radio-view-c" data-theme="c" class="ui-btn ui-corner-right ui-controlgroup-last ui-btn-up-c"><span class="ui-btn-inner ui-corner-right ui-controlgroup-last"><span class="ui-btn-text">Item 3</span></span></label><br><br>
+
+ 				
+			    <label for="search">Search Input:</label>
+			    <input type="search" name="search" id="search" value="" /><br><br>
+			    
+			    <label for="textarea">Textarea:</label>
+				<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea><br><br>
+				
+				<label for="select-choice-1" class="select">Choose shipping method:</label>
+				<select name="select-choice-1" id="select-choice-1">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+				</select>
+				
+				<fieldset data-role="controlgroup">
+					<legend>Agree to the terms:</legend>
+					<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+					<label for="checkbox-1">I agree</label>
+			    </fieldset>
+			    
 			</div>
 		
 			<!-- CANCEL AND SUBMIT BUTTONS -->
 			<div data-role="fieldcontain">
-				<input type="submit" value="Login" name="submitted" data-theme="a">
+				<input type="submit" value="Submit" name="submitted" data-theme="a">
 			</div>
-		</form>		
+		</form>
+		
+	<p>Here's the code for the form above. Don't let all attributes scare you! :)</p>
+	
+	<pre>&lt;form action="" method="post"&gt;	
+			&lt;!-- TEXT INPUT --&gt;
+			&lt;div data-role="fieldcontain"&gt;
+				&lt;label for="username"&gt;Username&lt;/label&gt;
+				&lt;input type="text" name="username" id="username"&gt;&lt;br&gt;
+			
+				&lt;label for="password"&gt;Password&lt;/label&gt;
+				&lt;input type="password" name="password" id="password"&gt;&lt;br&gt;
+				
+				&lt;label for="slider"&gt;Input slider:&lt;/label&gt;
+ 				&lt;input type="range" name="slider" id="slider" value="0" min="0" max="100"  /&gt;&lt;br&gt;&lt;br&gt;
+ 				
+ 				&lt;label for="slider2"&gt;Select slider:&lt;/label&gt;
+				&lt;select name="slider2" id="slider2" data-role="slider"&gt;
+					&lt;option value="off"&gt;Off&lt;/option&gt;
+					&lt;option value="on"&gt;On&lt;/option&gt;
+				&lt;/select&gt;&lt;br&gt;&lt;br&gt;
+				
+				&lt;label for="list"&gt;Select a list item:&lt;/label&gt;
+	         	&lt;input type="radio" name="radio-view" id="radio-view-a" value="list"&gt;&lt;label for="radio-view-a" data-theme="c" class="ui-btn ui-corner-left ui-btn-down-c ui-btn-up-c"&gt;&lt;span class="ui-btn-inner ui-corner-left"&gt;&lt;span class="ui-btn-text"&gt;Item 1&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;
+	         	&lt;input type="radio" name="radio-view" id="radio-view-b" value="grid"&gt;&lt;label for="radio-view-b" data-theme="c" class="ui-btn ui-btn-up-c"&gt;&lt;span class="ui-btn-inner"&gt;&lt;span class="ui-btn-text"&gt;Item 2&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;
+	         	&lt;input type="radio" name="radio-view" id="radio-view-c" value="gallery"&gt;&lt;label for="radio-view-c" data-theme="c" class="ui-btn ui-corner-right ui-controlgroup-last ui-btn-up-c"&gt;&lt;span class="ui-btn-inner ui-corner-right ui-controlgroup-last"&gt;&lt;span class="ui-btn-text"&gt;Item 3&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+ 				
+			    &lt;label for="search"&gt;Search Input:&lt;/label&gt;
+			    &lt;input type="search" name="search" id="search" value="" /&gt;&lt;br&gt;&lt;br&gt;
+			    
+			    &lt;label for="textarea"&gt;Textarea:&lt;/label&gt;
+				&lt;textarea cols="40" rows="8" name="textarea" id="textarea"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+				
+				&lt;label for="select-choice-1" class="select"&gt;Choose shipping method:&lt;/label&gt;
+				&lt;select name="select-choice-1" id="select-choice-1"&gt;
+					&lt;option value="standard"&gt;Standard: 7 day&lt;/option&gt;
+					&lt;option value="rush"&gt;Rush: 3 days&lt;/option&gt;
+					&lt;option value="express"&gt;Express: next day&lt;/option&gt;
+					&lt;option value="overnight"&gt;Overnight&lt;/option&gt;
+				&lt;/select&gt;
+				
+				&lt;fieldset data-role="controlgroup"&gt;
+					&lt;legend&gt;Agree to the terms:&lt;/legend&gt;
+					&lt;input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" /&gt;
+					&lt;label for="checkbox-1"&gt;I agree&lt;/label&gt;
+			    &lt;/fieldset&gt;
+			    
+			&lt;/div&gt;
+		
+			&lt;!-- CANCEL AND SUBMIT BUTTONS --&gt;
+			&lt;div data-role="fieldcontain"&gt;
+				&lt;input type="submit" value="Submit" name="submitted" data-theme="a"&gt;
+			&lt;/div&gt;
+		&lt;/form&gt;</pre>
+				
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4><small>WEBookshelf &copy; 2010 Andrew S. Roberts</small></h4>
+	<div data-role="footer" data-theme="b">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
 	</div><!-- /header -->
 </div><!-- /page -->
 
+<!-- ////////// BUTTONS AND ICONS DIV ////////// -->
+<div data-role="page" id="buttons-icons">
 
+	<div data-role="header">
+		<h1>Buttons &amp; Icons</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Numerous icons are available to use for buttons. Here are a few examples:</p><br />
+		
+		<a href="index.html" data-role="button" data-icon="arrow-l">Delete</a>
+		<a href="index.html" data-role="button" data-icon="arrow-r">Delete</a>
+		<a href="index.html" data-role="button" data-icon="arrow-u">Delete</a>
+		<a href="index.html" data-role="button" data-icon="arrow-d">Delete</a>
+		
+		<p>Code:</p>
+		
+		<pre>&lt;a href="index.html" data-role="button" data-icon="arrow-l"&gt;Delete&lt;/a&gt;
+		&lt;a href="index.html" data-role="button" data-icon="arrow-r"&gt;Delete&lt;/a&gt;
+		&lt;a href="index.html" data-role="button" data-icon="arrow-u"&gt;Delete&lt;/a&gt;
+		&lt;a href="index.html" data-role="button" data-icon="arrow-d"&gt;Delete&lt;/a&gt;</pre>
+		
+		<p>Buttons don't require text:</p>
+		
+		<a href="index.html" data-role="button" data-icon="delete" data-iconpos="notext">Delete</a>
+		
+		<p>Code:</p>
+		
+		<pre>&lt;a href="index.html" data-role="button" data-icon="delete" data-iconpos="notext"&gt;Delete&lt;/a&gt;</pre>
+		
+		<p>Here are the icons at your disposal:</p>
+		
+		<div data-role="controlgroup" data-type="horizontal" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
+		<a href="index.html" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext ui-corner-left"><span class="ui-btn-inner ui-corner-left"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="delete" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="plus" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="minus" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="check" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-check ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-gear ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-refresh ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-forward ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-down-a ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-grid ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="star" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-star ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-alert ui-icon-shadow"></span></span></a>
+		<a href="index.html" data-role="button" data-icon="info" data-iconpos="notext" data-theme="a" data-inline="true" title="My button" class="ui-btn ui-btn-inline ui-btn-icon-notext ui-corner-right ui-controlgroup-last ui-btn-up-a"><span class="ui-btn-inner ui-corner-right ui-controlgroup-last"><span class="ui-btn-text">My button</span><span class="ui-icon ui-icon-info ui-icon-shadow"></span></span></a>
+		</div>
+		
+		<p>Here are the HTML attribute values for each icon:</p>
+		<ul>
+			<li>Left arrow - data-icon="arrow-l"</li>
+			<li>Right arrow - data-icon="arrow-r"</li>
+			<li>Up arrow - data-icon="arrow-u"</li>
+			<li>Down arrow - data-icon="arrow-d"</li>
+			<li>Delete - data-icon="delete"</li>
+			<li>Plus - data-icon="plus"</li>
+			<li>Minus - data-icon="minus"</li>
+			<li>Check - data-icon="check"</li>
+			<li>Gear - data-icon="gear"</li>
+			<li>Refresh - data-icon="refresh"</li>
+			<li>Forward - data-icon="forward"</li>
+			<li>Back - data-icon="back"</li>
+			<li>Grid - data-icon="grid"</li>
+			<li>Star - data-icon="star"</li>
+			<li>Alert - data-icon="alert"</li>
+			<li>Info - data-icon="info"</li>
+		</ul>
+
+				
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- ////////// DATA THEME A DIV ////////// -->
+<div data-role="page" data-theme="a" id="theme-a">
+
+	<div data-role="header" data-theme="a">
+		<h1>Page Structure</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="a">	
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="a">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- ////////// DATA THEME B DIV ////////// -->
+<div data-role="page" data-theme="b" id="theme-b">
+
+	<div data-role="header" data-theme="b">
+		<h1>Page Structure</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="b">	
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="b">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- ////////// DATA THEME C DIV ////////// -->
+<div data-role="page" data-theme="c" id="theme-c">
+
+	<div data-role="header" data-theme="c">
+		<h1>Page Structure</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="c">	
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="c">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- ////////// DATA THEME D DIV ////////// -->
+<div data-role="page" data-theme="d" id="theme-d">
+
+	<div data-role="header" data-theme="d">
+		<h1>Page Structure</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="d">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- ////////// DATA THEME E DIV ////////// -->
+<div data-role="page" data-theme="e" id="theme-e">
+
+	<div data-role="header" data-theme="e">
+		<h1>Page Structure</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="e">	
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="e">
+		<h4><small>jQuery Mobile Overview - 2010 Andrew S. Roberts</small></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
 
 
 </body>

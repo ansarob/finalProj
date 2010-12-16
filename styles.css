@@ -1,0 +1,278 @@
+/* Reset and HTML5 Fix
+-----------------------------------------*/
+
+* {margin:0;
+   padding:0;
+   text-decoration: none; 
+   list-style-type: none;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display: block; /* Sets HTML5 elements to block */
+	overflow: hidden; /* Fixes child float problem */
+}
+
+/* General Styles
+-----------------------------------------*/
+
+body {
+	font-family: 'Molengo', arial, serif;
+	color: #336699;
+}
+
+#container {
+	width: 980px;
+	clear: both;
+	margin: 0 auto;
+}
+
+
+header {
+	height: 75px;
+	/*background-image: -moz-linear-gradient(#a5a7aa, #bec1c5 1%, #d8dbdf 10%, #d8dbdf);
+	margin-bottom: 10px;*/
+	color: #6699cc;
+}
+
+header small {
+	color: #336699;
+	margin: 0 0 0 10px;
+}
+
+header a:visited {
+	color: #4e789e;
+}
+
+
+#main {
+	background-color: lime;
+}
+
+aside {
+	width: 280px;
+	background: #666;
+	background: -moz-linear-gradient(#a5a7aa, #bec1c5 1%, #d8dbdf 5%, #d8dbdf);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a5a7aa),color-stop(.01, #bec1c5),color-stop(.10, #d8dbdf),color-stop(1, #d8dbdf));
+	margin-top: 40px;
+	margin-left: -30px;
+	padding: 10px;
+	-moz-border-radius: 0 10px 10px 0;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+
+aside a { color: #222222; }
+
+nav {
+	bottom:0;
+	left:0;
+	width:100%;
+	z-index:10
+	background: #666;
+	background: -moz-linear-gradient(#a5a7aa, #bec1c5 1%, #d8dbdf 10%, #d8dbdf);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a5a7aa),color-stop(.01, #bec1c5),color-stop(.10, #d8dbdf),color-stop(1, #d8dbdf));
+	-moz-border-radius: 0 0 5px 5px;	
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+
+nav ul {
+	list-style:none;
+	}
+
+nav ul li {
+	display:inline;
+	display:block;
+	width:100px;
+	position:relative
+	margin: 0;
+	float: left;
+	border-right: 1px dotted gray;
+}
+
+nav ul li a {
+	background-image: -moz-linear-gradient(#a5a7aa, #bec1c5 1%, #d8dbdf 10%, #d8dbdf);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a5a7aa),color-stop(.01, #bec1c5),color-stop(.10, #d8dbdf),color-stop(1, #d8dbdf));
+	display:block;
+	text-align:center;
+	color:black;
+	padding:10px 0;
+	text-transform:uppercase;
+	text-align: center;
+	background-color: #666;
+}
+
+/*nav ul li:first-child a {
+	-moz-border-radius-bottomleft: 5px;
+}*/
+
+nav ul li a:hover {
+	background: -moz-linear-gradient(#9c9fa2, #b4b7bb 1%, #cdd0d5 10%, #cdd0d5);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #9c9fa2),color-stop(.01, #b4b7bb),color-stop(.10, #cdd0d5),color-stop(1, #cdd0d5));
+}
+
+footer {
+	
+}
+
+/* Index: Books
+-----------------------------------------*/
+
+#categories {
+	background: #666;
+	background: -moz-linear-gradient(#a5a7aa, #bec1c5 1%, #d8dbdf 10%, #d8dbdf);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a5a7aa),color-stop(.01, #bec1c5),color-stop(.10, #d8dbdf),color-stop(1, #d8dbdf));
+	margin-bottom: 10px;
+	padding: 4px 0 4px 6px;
+	-moz-border-radius: 10px 10px 0 0;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	width: 590px;
+}
+
+#categories a { color: #222222; }
+
+#categories a:hover {
+	background: #999;
+	-moz-border-radius: 5px;
+	padding: 0 2px 0 2px;
+}
+
+.single-book {
+	width: 180px;
+	height: 236px;
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+	margin: 0 25px 25px 0;
+	position: relative;
+	/*padding: 20px 5px 2px 5px;*/
+	float: left;
+}
+
+.single-book:hover {
+	-moz-box-shadow: 0 0 5px #666666;
+}
+
+.book-cover {
+	width: 180px;
+	height: 236px;
+}
+
+.like-book {
+	width: 40px;
+	padding: 0 2px 0 2px;
+	background-color: #3399CC!important;
+	font-size: 14px;
+	position:absolute;
+	-moz-border-radius: 0 0 0 5px;
+	-webkit-border-radius: 0 0 0 5px;
+	border: 1px solid #000000;
+ 	top:0;
+ 	right:0;
+ 	color: white;
+ 	margin: 0 auto;
+}
+
+.like-book a:link, a:visited {
+	
+}
+
+.more-book {
+	width: 40px;
+	padding: 0 2px 0 2px;
+	background-color: #7D110C;
+	font-size: 14px;
+	position:absolute;
+	-moz-border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	border: 1px solid #000000;
+ 	bottom:0;
+ 	right:0;
+ 	color: white;
+ 	margin: 0 auto;
+}
+
+/* Login/Register Forms
+-----------------------------------------*/
+
+form {
+	padding: 5px;
+	font-size: 14px;
+	margin-left: -2px;
+}
+
+form input {
+	padding: 3px;
+	-moz-box-shadow: 0 0 -3px #7d110c;
+}
+
+form p{
+width: 290px;
+clear: left;
+margin: 0;
+padding: 5px 0 8px 0;
+padding-left: 155px; /*width of left column containing the label elements*/
+border-top: 1px dashed gray;
+height: 1%;
+}
+
+form label{
+font-size: 14px;
+float: left;
+/*margin-left: -155px;*/ /*width of left column*/
+width: 150px; /*width of labels. Should be smaller than left column (155px) to create some right margin*/
+}
+
+/* Specific Books Page
+-----------------------------------------*/
+
+bookSpec {
+
+}
+
+
+/* Users Page
+-----------------------------------------*/
+
+#user-profile {
+	
+}
+
+.gravatar {
+	float: left;
+	margin: 0 5px 5px 0;
+}
+
+#user-bookshelf {
+	width: 500px;
+	height: 10px;
+	background-image: -moz-linear-gradient(#cc9933, #cc9900 10%, #996600);
+	overflow: ;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
